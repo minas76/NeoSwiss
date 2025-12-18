@@ -1,0 +1,90 @@
+/* Neo-Swiss Design System — CSS Custom Properties */
+
+:root {
+  /* Colors — Monochrome foundation + single accent */
+  --color-primary: #111111;      /* Near-black primary text */
+  --color-background: #FFFFFF;   /* Clean white background */
+  --color-gray-light: #F5F5F5;   /* Subtle backgrounds */
+  --color-gray-border: #E0E0E0;  /* Dividers, borders */
+  --color-gray-mid: #BDBDBD;     /* Mid-tone, disabled states */
+  --color-gray-dark: #757575;    /* Secondary text, muted */
+  --color-accent: #2962FF;       /* Muted blue, CTAs, highlights */
+  
+  /* Typography */
+  --font-family: Inter, -apple-system, system-ui, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  
+  /* Fluid type scale (1rem = 16px base) */
+  --h1-size: clamp(2.25rem, 5vw, 4rem);
+  --h2-size: clamp(1.75rem, 4vw, 3rem);
+  --h3-size: clamp(1.25rem, 2.8vw, 1.75rem);
+  --h4-size: 1.125rem;
+  --body-size: clamp(1rem, 2vw, 1.125rem);
+  --small-size: 0.875rem;
+  
+  /* Line heights */
+  --lh-tight: 1.15;
+  --lh-normal: 1.2;
+  --lh-relaxed: 1.25;
+  --lh-loose: 1.6;
+  
+  /* Spacing — Golden ratio based */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  
+  /* Grid — Responsive gap */
+  --gap-mobile: 0.75rem;
+  --gap-tablet: 1rem;
+  --gap-desktop: 1.5rem;
+  
+  /* Layout */
+  --container-max: 1200px;
+  --container-padding-mobile: 1.25rem;
+  --container-padding-tablet: 1rem;
+  --container-padding-desktop: 1.5rem;
+  
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  
+  /* Z-index */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-fixed: 1000;
+  --z-modal: 2000;
+  --z-tooltip: 3000;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #F5F5F5;
+    --color-background: #111111;
+    --color-gray-light: #2A2A2A;
+    --color-gray-border: #3A3A3A;
+    --color-gray-mid: #505050;
+    --color-gray-dark: #A0A0A0;
+  }
+}

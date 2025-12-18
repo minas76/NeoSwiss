@@ -1,0 +1,41 @@
+---
+layout: base.njk
+---
+
+<article class="project-container">
+  <header class="project-header">
+    <div class="container">
+      <p class="eyebrow">Case study</p>
+      <h1>{{ title }}</h1>
+      <p class="lede">{{ description }}</p>
+      
+      <div class="project-meta">
+        <span class="status">{{ status }}</span>
+        <span class="date">{{ date | readableDate }}</span>
+      </div>
+      
+      <div class="project-links">
+        {% if demo %}<a href="{{ demo }}" class="btn btn-primary" target="_blank">View demo</a>{% endif %}
+        {% if github %}<a href="{{ github }}" class="btn btn-outline" target="_blank">View code</a>{% endif %}
+      </div>
+    </div>
+  </header>
+
+  {% if image %}
+  <figure class="project-image">
+    <img src="{{ image }}" alt="{{ title }}" />
+  </figure>
+  {% endif %}
+
+  <div class="project-content">
+    <div class="container">
+      {{ content | safe }}
+    </div>
+  </div>
+
+  <nav class="project-nav">
+    <div class="container">
+      <a href="/projects/" class="back-link">← Back to projects</a>
+    </div>
+  </nav>
+</article>

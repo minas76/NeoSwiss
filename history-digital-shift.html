@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digital Shift — Neo‑Swiss</title>
+  <meta name="description" content="How Neo‑Swiss adapted to the web and responsive design." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-grid">
+  <div class="brand"><a href="index.html">Neo‑Swiss</a></div>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="history-overview.html">History</a></li>
+          <li><a href="history-origins.html">Origins</a></li>
+          <li><a href="history-digital-shift.html" aria-current="page">Digital Shift</a></li>
+          <li><a href="history-modern.html">Modern Practice</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="page-hero corporate-hero small-hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Responsive web</p>
+            <h1>From print grids to fluid systems</h1>
+            <p class="lede">The responsive movement and CSS Grid made it possible to translate Swiss structure into adaptable digital systems that flow across devices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <aside class="sidebar">
+        <nav aria-label="History sections">
+          <ul class="side-links">
+            <li><a href="history-overview.html">Overview</a></li>
+            <li><a href="history-origins.html">Origins & Founders</a></li>
+            <li><a href="history-digital-shift.html" aria-current="page">Digital Shift</a></li>
+            <li><a href="history-modern.html">Modern Practice</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <article class="main-article">
+        <h2>Technical milestones</h2>
+        <ul>
+          <li><strong>Responsive Web Design (2010)</strong> — the mobile era forces fluid design thinking.</li>
+          <li><strong>CSS Grid (2017)</strong> — native grid capabilities mirror print grids but remain flexible.</li>
+          <li><strong>Design Systems</strong> — tokens, components and patterns operationalize Neo‑Swiss at scale.</li>
+        </ul>
+
+        <h3>Design to engineering</h3>
+        <p>Neo‑Swiss encourages a shared language between designers and engineers: predictable spacing tokens, column rules, and component behavior reduce guesswork.</p>
+      </article>
+    </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <small>© <span id="year"></span> Neo‑Swiss — Enterprise examples</small>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="history-overview.html">History</a></li>
+          <li><a href="styleguide.html">Design System</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

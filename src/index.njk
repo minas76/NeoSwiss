@@ -1,0 +1,86 @@
+---
+layout: base.njk
+title: Neo-Swiss Design System
+description: A modern portfolio built with authentic Neo-Swiss design principles
+---
+
+<section class="section section-hero">
+  <div class="container">
+    <div style="grid-column: span 12;">
+      <p class="eyebrow">Modern design system</p>
+      <h1>Neo-Swiss Design System</h1>
+      <p class="lede">Contemporary responsive web design grounded in Swiss modernist principles. Authentic grid systems, fluid typography, and semantic tokens for production-ready projects.</p>
+      
+      <div class="flex gap-md" style="margin-top: var(--space-xl);">
+        <a href="/projects/" class="btn btn-primary">View projects</a>
+        <a href="/about/" class="btn btn-outline">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="grid-column: span 12;">
+      <h2 class="section-title">Featured work</h2>
+    </div>
+    
+    {% set projects = collections.featured | slice(0, 3) %}
+    {% for project in projects %}
+      <article class="card scroll-up" style="grid-column: span 4; @media (max-width: 768px) { grid-column: span 6; } @media (max-width: 480px) { grid-column: span 4; }">
+        <h3 class="card-title">{{ project.data.title }}</h3>
+        <p class="card-body">{{ project.data.description }}</p>
+        <a href="{{ project.url }}" class="link-arrow">Read case study →</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div style="grid-column: span 12;">
+      <h2 class="section-title">Latest articles</h2>
+    </div>
+    
+    {% set posts = collections.blog | slice(0, 3) %}
+    {% for post in posts %}
+      <article class="card scroll-up" style="grid-column: span 4; @media (max-width: 768px) { grid-column: span 6; } @media (max-width: 480px) { grid-column: span 4; }">
+        <h3 class="card-title">{{ post.data.title }}</h3>
+        <p class="card-body">{{ post.data.description }}</p>
+        <footer class="card-footer">
+          <span class="date">{{ post.data.date | readableDate }}</span>
+          <a href="{{ post.url }}" class="link-arrow">Read →</a>
+        </footer>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="grid-column: span 12;">
+      <h2 class="section-title">Design principles</h2>
+      <p class="section-sub">Neo-Swiss combines Swiss modernism with contemporary responsive web design.</p>
+    </div>
+    
+    <div class="card scroll-up" style="grid-column: span 6; @media (max-width: 768px) { grid-column: span 6; } @media (max-width: 480px) { grid-column: span 4; }">
+      <h3>Grid-based</h3>
+      <p>Responsive CSS Grid system: 4 columns (mobile) → 6 (tablet) → 12 (desktop)</p>
+    </div>
+    
+    <div class="card scroll-up" style="grid-column: span 6; @media (max-width: 768px) { grid-column: span 6; } @media (max-width: 480px) { grid-column: span 4; }">
+      <h3>Fluid typography</h3>
+      <p>Clamp-based scaling ensures readable text on all devices</p>
+    </div>
+    
+    <div class="card scroll-up" style="grid-column: span 6; @media (max-width: 768px) { grid-column: span 6; } @media (max-width: 480px) { grid-column: span 4; }">
+      <h3>Monochrome + accent</h3>
+      <p>High-contrast palette with single accent color for professionalism</p>
+    </div>
+    
+    <div class="card scroll-up" style="grid-column: span 6; @media (max-width: 768px) { grid-column: span 6; } @media (max-width: 480px) { grid-column: span 4; }">
+      <h3>Accessible</h3>
+      <p>WCAG AA+ compliance with semantic HTML and keyboard navigation</p>
+    </div>
+  </div>
+</section>

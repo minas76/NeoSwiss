@@ -1,0 +1,36 @@
+---
+layout: base.njk
+---
+
+<article class="article-container">
+  <header class="article-header">
+    <div class="container">
+      <p class="eyebrow">Blog post</p>
+      <h1>{{ title }}</h1>
+      <p class="lede">{{ description }}</p>
+      
+      <div class="article-meta">
+        <span class="date">{{ date | readableDate }}</span>
+        <span class="reading-time">{{ content | readingTime }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-content">
+    <div class="container">
+      {{ content | safe }}
+    </div>
+  </div>
+
+  <nav class="article-nav">
+    <div class="container">
+      {% if previousPost %}
+        <a href="{{ previousPost.url }}" class="prev-link">← {{ previousPost.data.title }}</a>
+      {% endif %}
+      
+      {% if nextPost %}
+        <a href="{{ nextPost.url }}" class="next-link">{{ nextPost.data.title }} →</a>
+      {% endif %}
+    </div>
+  </nav>
+</article>

@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Projects
+description: Selected case studies and project work
+---
+
+<section class="section">
+  <div class="container">
+    <div style="grid-column: span 12;">
+      <p class="eyebrow">Case studies</p>
+      <h1>Projects</h1>
+      <p class="lede">A selection of recent projects built with Neo-Swiss design principles.</p>
+    </div>
+    
+    {% for project in collections.projects %}
+      <article class="card scroll-up" style="grid-column: span 6; @media (max-width: 768px) { grid-column: span 6; } @media (max-width: 480px) { grid-column: span 4; }">
+        <h3 class="card-title">{{ project.data.title }}</h3>
+        <p class="card-body">{{ project.data.description }}</p>
+        <footer class="card-footer">
+          <span class="status {% if project.data.status === 'active' %}active{% endif %}">{{ project.data.status }}</span>
+          <a href="{{ project.url }}" class="link-arrow">Read →</a>
+        </footer>
+      </article>
+    {% endfor %}
+  </div>
+</section>

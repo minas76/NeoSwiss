@@ -1,0 +1,21 @@
+{
+  "title": "Neo-Swiss Design System",
+  "description": "A modern portfolio built with authentic Neo-Swiss design principles. Responsive, accessible, and production-ready.",
+  "author": "Your Name",
+  "email": "your@email.com",
+  "url": "https://yourdomain.com",
+  "lang": "en",
+  "social": {
+    "github": "https://github.com/username",
+    "linkedin": "https://linkedin.com/in/username",
+    "twitter": "https://twitter.com/username"
+  },
+  "colors": {
+    "primary": "#111111",
+    "background": "#FFFFFF",
+    "accent": "#2962FF",
+    "gray_light": "#F5F5F5",
+    "gray_border": "#E0E0E0",
+    "gray_dark": "#757575"
+  }
+}

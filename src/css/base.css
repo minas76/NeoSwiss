@@ -1,0 +1,164 @@
+/* Base Typography & Components */
+
+/* Eyebrow / Label */
+.eyebrow {
+  display: block;
+  font-size: var(--small-size);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gray-dark);
+  margin-bottom: var(--space-sm);
+}
+
+/* Lede / Introduction */
+.lede {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: var(--lh-relaxed);
+  color: var(--color-primary);
+  max-width: 65ch;
+  margin-bottom: var(--space-lg);
+}
+
+/* Section title */
+.section-title {
+  font-size: var(--h2-size);
+  font-weight: var(--font-weight-black);
+  margin-bottom: var(--space-md);
+}
+
+.section-sub {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  color: var(--color-gray-dark);
+  margin-bottom: var(--space-lg);
+  max-width: 60ch;
+}
+
+/* Link with arrow */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: var(--font-weight-semibold);
+  transition: gap var(--transition-fast);
+}
+
+.link-arrow:hover {
+  gap: var(--space-md);
+}
+
+/* Small */
+small, .small {
+  font-size: var(--small-size);
+  line-height: var(--lh-normal);
+  color: var(--color-gray-dark);
+}
+
+/* Muted text */
+.muted {
+  color: var(--color-gray-dark);
+  opacity: 0.9;
+}
+
+/* Lead paragraph (first paragraph) */
+p:first-of-type {
+  font-size: clamp(1.05rem, 1.1vw, 1.15rem);
+  margin-bottom: var(--space-lg);
+}
+
+/* Headings with margins */
+h1 { margin-bottom: var(--space-lg); }
+h2 { margin-bottom: var(--space-md); }
+h3 { margin-bottom: var(--space-md); }
+h4 { margin-bottom: var(--space-sm); }
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--color-gray-border);
+  margin: var(--space-2xl) 0;
+}
+
+/* Definition list */
+dt {
+  font-weight: var(--font-weight-semibold);
+  margin-top: var(--space-md);
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: var(--space-md);
+  color: var(--color-gray-dark);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-lg);
+}
+
+th,
+td {
+  padding: var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-gray-border);
+}
+
+th {
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-gray-light);
+}
+
+tr:hover {
+  background-color: var(--color-gray-light);
+}
+
+/* Status badge */
+.status {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-gray-light);
+  color: var(--color-gray-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--small-size);
+  font-weight: var(--font-weight-semibold);
+  text-transform: capitalize;
+}
+
+.status.active {
+  background-color: rgba(41, 98, 255, 0.1);
+  color: var(--color-accent);
+}
+
+/* Tag */
+.tag {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-gray-light);
+  color: var(--color-gray-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--small-size);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.tag:hover {
+  background-color: var(--color-gray-border);
+  color: var(--color-primary);
+}
+
+/* Badge count */
+.badge {
+  display: inline-block;
+  padding: 0 var(--space-xs);
+  min-width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-black);
+}

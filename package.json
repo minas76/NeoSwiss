@@ -1,0 +1,37 @@
+{
+  "name": "neo-swiss-portfolio",
+  "version": "1.0.0",
+  "description": "A modern portfolio built with Neo-Swiss design principles using Eleventy 3.x",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --serve --watch --port=8080",
+    "build": "eleventy",
+    "build:production": "NODE_ENV=production eleventy",
+    "serve": "eleventy --serve",
+    "start": "npm run dev",
+    "clean": "rm -rf _site",
+    "docker:dev": "docker compose --profile dev up --build",
+    "docker:prod": "docker compose --profile production up -d --build",
+    "docker:stop": "docker compose --profile dev --profile production down",
+    "docker:clean": "docker compose --profile dev --profile production down -v"
+  },
+  "keywords": [
+    "eleventy",
+    "neo-swiss",
+    "design-system",
+    "portfolio",
+    "static-site",
+    "github-pages",
+    "responsive"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it": "^14.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

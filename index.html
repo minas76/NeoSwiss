@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neo‑Swiss — Design Gallery</title>
+  <meta name="description" content="Neo‑Swiss responsive demo: grid-based, fluid typography, accessible." />
+
+  <!-- Inter from Google Fonts (fallbacks provided) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <a href="index.html">Neo‑Swiss</a>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="styleguide.html">Design System</a></li>
+          <li><a href="history-overview.html">History</a></li>
+          <li><a class="btn btn-primary" href="#contact">Get started</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="corporate-landing">
+      <div class="container">
+        <div class="landing-grid">
+          <div class="landing-left">
+            <p class="eyebrow">Design at scale</p>
+            <h1>Neo‑Swiss Design System</h1>
+            <p class="lede">Build consistent, accessible products with a modern design system grounded in Swiss principles. Responsive grids, fluid typography, and semantic tokens.</p>
+
+            <div class="landing-ctas">
+              <a class="btn btn-primary" href="styleguide.html">Explore tokens</a>
+              <a class="btn btn-ghost" href="#features">See features</a>
+            </div>
+
+            <ul class="feature-badges" aria-hidden="true">
+              <li>
+                <strong>Secure</strong>
+                <span>WCAG AA+ accessibility</span>
+              </li>
+              <li>
+                <strong>Responsive</strong>
+                <span>4 → 6 → 12 grid</span>
+              </li>
+              <li>
+                <strong>Documented</strong>
+                <span>Complete styleguide</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="landing-right" aria-hidden="true">
+            <div class="hero-panel">
+              <div class="panel-inner">
+                <h4>Production‑ready</h4>
+                <p class="small">Built with Inter, mobile-first CSS Grid, fluid clamp() typography, and semantic color/spacing tokens.</p>
+                <div style="margin-top:var(--space-2);padding-top:var(--space-2);border-top:1px solid rgba(11,99,227,0.08)">
+                  <p class="small" style="margin:0"><strong>Powered by:</strong><br />CSS Grid · Clamp() · Tokens · Accessibility</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Platform features</h2>
+        <p class="section-sub">Core capabilities that enterprises rely on.</p>
+
+        <div class="grid features-grid">
+          <article class="feature card">
+            <h3>Responsive grid</h3>
+            <p>12 → 6 → 4 responsive columns with consistent gutters and container alignment.</p>
+          </article>
+          <article class="feature card">
+            <h3>Fluid typography</h3>
+            <p>Clamp() based scale for headings and body text to preserve hierarchy at any size.</p>
+          </article>
+          <article class="feature card">
+            <h3>Design tokens</h3>
+            <p>Color, spacing, and elevation tokens that power consistent components across products.</p>
+          </article>
+          <article class="feature card">
+            <h3>Accessibility</h3>
+            <p>Landmarks, keyboard accessibility, and focus-visible styles out of the box.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="built" class="section">
+      <div class="container">
+        <h2 class="section-title">Built with modern tooling</h2>
+        <p class="section-sub">Examples of production concerns addressed by the system.</p>
+
+        <div class="tech-grid">
+          <div class="tech">Automatic HTTPS</div>
+          <div class="tech">HTTP/3 & performance</div>
+          <div class="tech">PostgreSQL & data tooling</div>
+          <div class="tech">Containerized deployments</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title">Join us</h2>
+        <p class="section-sub">Connect with the Neo‑Swiss community or get started with your design system.</p>
+        <form class="contact-form" aria-label="Contact form">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" type="email" placeholder="you@company.com" required />
+          <button class="btn btn-primary">Request a demo</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <small>© <span id="year"></span> Neo‑Swiss Demo — Built with system fonts & Inter</small>
+      <nav aria-label="Footer" class="footer-nav">
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Grid overlay: compute pixel-perfect column width and left offset to match centered .container
+    (function(){
+      const btn = document.getElementById('toggle-grid');
+      if(!btn) return;
+
+      function colsForWidth(w){
+        if(w >= 1200) return 12;
+        if(w >= 768) return 6;
+        return 4;
+      }
+
+      function updateOverlayVars(){
+        const cols = colsForWidth(window.innerWidth);
+        const container = document.querySelector('.container');
+        // fallback column width if container not found
+        let colPx = Math.max(8, Math.floor(window.innerWidth / cols));
+        let left = 0;
+        if(container){
+          const rect = container.getBoundingClientRect();
+          colPx = rect.width / cols;
+          left = rect.left;
+        }
+
+        // set CSS variables for pixel-perfect overlay
+        document.documentElement.style.setProperty('--overlay-cols', String(cols));
+        document.documentElement.style.setProperty('--overlay-col-width', `${colPx}px`);
+        document.documentElement.style.setProperty('--overlay-left-offset', `${Math.round(left)}px`);
+        btn.setAttribute('data-cols', cols);
+      }
+
+      // initialize and keep in sync on resize
+      updateOverlayVars();
+      let resizeTimer;
+      window.addEventListener('resize', function(){
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateOverlayVars, 80);
+      });
+
+      btn.addEventListener('click', function(){
+        const on = document.body.classList.toggle('show-grid');
+        btn.setAttribute('aria-pressed', String(on));
+        // recalc when toggling so overlay aligns immediately
+        updateOverlayVars();
+      });
+    })();
+  </script>
+</body>
+</html>
